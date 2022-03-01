@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style/css.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="script/data.js"></script>
+<script src="script/iteration.js"></script>
+<script src="script/products.js"></script>
+</head>
+<body>
+
+<div class="container2">
+<h3>Order Form</h3>
+</div>
+<div class="container">
+  <form name="Order Form" method="post" enctype="multipart-form/data" netlify>
+
+    <label for="name">Name</label>
+    <input type="text" required id="name" name="name" placeholder="Your name">
+
+    <label for="email">Email</label>
+    <input type="text" required id="email" name="email" placeholder="Email">
+	
+    <label>Product</label><br>
+	<table>
+		<tr>
+			<td class="productimage">
+				<div id="producttable">
+					<input type="radio" id="N/A" name="product" value='N/A'>
+				</div>
+			</td>
+			<td>
+				<img id="imageofproduct" src="">
+			</td>
+		</tr>
+	</table>
+	
+
+  <br>
+  
+	<div id="options">
+		<select id='size' name='size' hidden>
+			<option value='N/A'></option>
+		</select>
+		
+		<select id='color' name='color' hidden>
+			<option value='N/A'></option>
+		</select>
+	</div>
+	
+	<label>Design</label><br>
+	<table>
+		<tr>
+			<td align="left">
+				<input type="radio" id="premade" name="design_choice" value='premade' onclick='designtype()'>
+				Premade
+			</td>
+		</tr>
+		<tr>
+			<td align="left">
+				<input type="radio" id="custom" name="design_choice" value='custom' onclick='designtype()'>
+				Custom
+			</td>
+		</tr>
+	</table><br>
+	
+	<div id="premadeddesigns">
+		<label for='designs'>Premaded Designs</label>
+		<table class="table">
+			<tr class="table">
+				<th class="table">
+					<div id="designlist">
+						<select id='designs' name='designs' onchange='designpeview()' required>
+							<option value='N/A'></option>
+						</select>
+					</div>
+				</th>
+				<th>
+					<img id="imageofdesign" src="">
+				</th>
+			</tr>
+		</table>
+	</div>
+	
+	
+	<div id="customdesigns">
+		<div class="link">
+			<label for="imglink">Link to Image</label><br>
+			<textarea id="imglink" name="imglink" placeholder="If you have an image in mind. Put the link to it here." ></textarea>
+		</div>
+	
+		<label for="design">What I Want</label><br>
+		<textarea id="design" name="design" placeholder="Write about how you want your product.."> </textarea></th>
+	</div>
+	
+	<input type="text" required id="quotedcost" name="quotedcost" hidden>
+	
+	<br>
+	<table class="table">
+		<tr class="table">
+			<th class="table">
+			<input type="submit" value="Submit"></th>
+			<th><div id="costdiv"><h1 id="cost">Cost: $00</h1></div></th>
+		</tr>
+	</table>
+    
+
+  </form>
+</div>
+</body>
+</html>
